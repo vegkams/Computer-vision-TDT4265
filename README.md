@@ -1,5 +1,4 @@
 # README #
-HOW'BOUT U FUCKIN' CONTRIBUTE M8??
 
 ### What is this repository for? ###
 
