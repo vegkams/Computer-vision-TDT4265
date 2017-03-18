@@ -1,0 +1,27 @@
+Feedback provided by group: 10
+To Group 6  - 2.4.3.10:* Watershed Segmentation
+Did the text help you understand the topic better?
+The concept of the algorithm/method was easily understood and to the point due to satisfactory illustrations, for instance of the distance transform and of the topological structure, and well enough descriptions. However, it would have been nice with some illustrations showing how the basins fill with water during the algorithm and from there how you find the watershed lines one by one. 
+
+What aspects were good about it?
+Illustrations in 3D, illustration of distance transform and of the differents steps of the algorithm the group used was splendid and showed nicely step by step. 
+
+English was (mostly, some confusing sentences see “aspects to be improved”) well formulated and easily understood. 
+
+We liked that the group have provided a coded example and not only showed the code, but explained step-by-step what the code was supposed to do. 
+
+We also liked that the group chose only the most used algorithm (Meyer’s) to describe how the method works and discarded potentially others. Simple and straight to the point. 
+
+The exam questions both tested the ability to use knowledge as well as reproduce. 
+
+What aspects can be improved?
+The description of the Meyer’s flooding algorithm was a bit confusing in the way the group formulated it (especially step 3). These could have been improved by reformulating some of the sentences and some simple illustrations/example of the labeled pixels and the not labelled pixels
+
+When explaining how the basins fill, and eventually start to merge during the flooding it would have been nice with a small illustration of this, and how, during the filling, you obtain/see the watershed lines. For instance explaining how two regions merging together during the filling may be detected by using the dilation operator, which will also detect the watershed lines if used properly. 
+
+Some of the exam questions tested knowledge that was not given in this section, see below under “information missing”.
+
+Was there any information missing? 
+Some of the exam questions asks for information that was not provided in the section. For instance, exam question 4 states that the lines are called Watershed Ridge Lines and have pixel width one, which is not mentioned at all in the section describing the watershed segmentation. 
+
+Further, in exam question 1 the question asks for info about region-based and boundary-based segmentation which are covered in different sections than the group was responsible for, and it is not mentioned which group of segmentation techniques the watershed segmentation belongs to. It would be nice if the exam questions for the section allows you to read only the section to answer them. 
