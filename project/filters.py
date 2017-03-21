@@ -136,7 +136,7 @@ def contourDetectionCircleSquare(src):
 def circleDetection(src):
     gray_img = cv2.cvtColor(src, cv2.COLOR_BGR2GRAY)
     img = cv2.medianBlur(gray_img, 9)
-    circles = cv2.HoughCircles(img, cv2.HOUGH_GRADIENT, 1, 2000, param1=200, param2=50, minRadius=10, maxRadius=200)
+    circles = cv2.HoughCircles(img, cv2.HOUGH_GRADIENT, 1, 200, param1=200, param2=30, minRadius=2, maxRadius=200)
     if circles is not None:
         circles = numpy.uint16(numpy.around(circles))
 
@@ -145,6 +145,8 @@ def circleDetection(src):
             cv2.circle(src, (i[0], i[1]), i[2], (0, 255, 0), 2)
             # draw the center of the circle
             cv2.circle(src, (i[0], i[1]), 2, (0, 0, 255), 3)
+
+
 
 
 def autoThresh(src, blockSize, blurKern):
@@ -187,7 +189,7 @@ def autoThreshMorph(src, blockSize, blurKern):
 
 def watershed(src, thresh1, blurKern):
     # Show histogram
-    # plt.hist(src.ravel(),256,[0,256]); plt.show()
+    #plt.hist(src.ravel(),256,[0,256]); plt.show()
 
     img = src
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)

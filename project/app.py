@@ -36,39 +36,7 @@ class Cameo(object):
 
             ###### Filter testing #########
 
-            # self._captureManager._frame = filters.g_hpf(frame, self._edgeKernelSize)
-
-            # filters.strokeEdges(frame, frame, self_edgeKernelSize)
-
-            # self._captureManager._frame = filters.edgeLaplacian(frame, self._edgeKernelSize, self._blurKernelSize)
-
-            # filters.edgeLaplacianColor(frame, self._edgeKernelSize, self._blurKernelSize)
-
-            # self._sharpenFilter.apply(frame, frame)
-
-            # self._findEdgesFilter.apply(frame, frame)
-
-            # self._blurFilter.apply(frame, frame)
-
-            # self._embossFilter.apply(frame, frame)
-
-            # frame = cv2.medianBlur(frame, 11)
-
-            # self._captureManager._frame = filters.cannyEdge(frame, self._cannyThresholdValue1, self._cannyThresholdValue2)
-
-            # self._captureManager._frame = filters.contourDetection(frame)
-
-            # self._captureManager._frame = filters.contourDetectionCircleSquare(frame)
-
-            # self._captureManager._frame = filters.contourDetectionPolygon(frame)
-
-            #filters.circleDetection(frame)
-
-            #self._captureManager._frame = filters.watershed(frame, self._edgeKernelSize, self._blurKernelSize)
-
-            self._captureManager._frame = filters.autoThresh(frame,self._edgeKernelSize ,self._blurKernelSize)
-
-            # self._captureManager._frame = filters.autoThreshMorph(frame,self._edgeKernelSize ,self._blurKernelSize)
+            self.filterTester(frame)
 
             ###### Filter testing #########
 
@@ -78,6 +46,44 @@ class Cameo(object):
 
 
             self._windowManager.processEvents()
+
+
+    def filterTester(self, frame):
+
+        # self._captureManager._frame = filters.g_hpf(frame, self._edgeKernelSize)
+
+        # filters.strokeEdges(frame, frame, self_edgeKernelSize)
+
+        # self._captureManager._frame = filters.edgeLaplacian(frame, self._edgeKernelSize, self._blurKernelSize)
+
+        # filters.edgeLaplacianColor(frame, self._edgeKernelSize, self._blurKernelSize)
+
+        # self._sharpenFilter.apply(frame, frame)
+
+        # self._findEdgesFilter.apply(frame, frame)
+
+        # self._blurFilter.apply(frame, frame)
+
+        # self._embossFilter.apply(frame, frame)
+
+        # frame = cv2.medianBlur(frame, 11)
+
+        # self._captureManager._frame = filters.cannyEdge(frame, self._cannyThresholdValue1, self._cannyThresholdValue2)
+
+        # self._captureManager._frame = filters.contourDetection(frame)
+
+        # self._captureManager._frame = filters.contourDetectionCircleSquare(frame)
+
+        # self._captureManager._frame = filters.contourDetectionPolygon(frame)
+
+        #filters.circleDetection(frame)
+
+        # self._captureManager._frame = filters.watershed(frame, self._edgeKernelSize, self._blurKernelSize)
+
+        # self._captureManager._frame = filters.autoThresh(frame,self._edgeKernelSize ,self._blurKernelSize)
+
+        # self._captureManager._frame = filters.autoThreshMorph(frame,self._edgeKernelSize ,self._blurKernelSize)
+
 
     def onKeypress(self, keycode):
         """Handle a keypress.
