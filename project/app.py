@@ -1,22 +1,31 @@
 # coding=utf-8
 import cv2
 import filters
+import time
 from managers import WindowManager, CaptureManager
 
 
 class Cameo(object):
     def __init__(self):
         self._windowManager = WindowManager('App', self.onKeypress)
-        self._captureManager = CaptureManager(cv2.VideoCapture(0), self._windowManager, True)
+
+        # Web cam
+        #self._captureManager = CaptureManager(cv2.VideoCapture(0), self._windowManager, True)
+        # Read from folder
+        self._captureManager = CaptureManager(cv2.VideoCapture("FullIJCNN2013/00%03d.ppm"), self._windowManager, False)
+
         self._sharpenFilter = filters.SharpenFilter()
         self._findEdgesFilter = filters.FindEdgesFilter()
         self._blurFilter = filters.BlurFilter()
         self._embossFilter = filters.EmbossFilter()
+
+
         self._edgeKernelSize = 127
         self._blurKernelSize = 13
         self._cannyThresholdValue1 = 100
         self._cannyThresholdValue2 = 200
         self._binaryThresh = 127
+
 
     def run(self):
         """Run the main loop."""
@@ -25,7 +34,7 @@ class Cameo(object):
             self._captureManager.enterFrame()
             frame = self._captureManager.frame
 
-            ###### Filters #########
+            ###### Filter testing #########
 
             # self._captureManager._frame = filters.g_hpf(frame, self._edgeKernelSize)
 
@@ -53,18 +62,21 @@ class Cameo(object):
 
             # self._captureManager._frame = filters.contourDetectionPolygon(frame)
 
-            # filters.circleDetection(frame)
+            #filters.circleDetection(frame)
 
-            self._captureManager._frame = filters.watershed(frame, self._edgeKernelSize, self._blurKernelSize)
+            #self._captureManager._frame = filters.watershed(frame, self._edgeKernelSize, self._blurKernelSize)
 
-            # self._captureManager._frame = filters.autoThresh(frame,self._edgeKernelSize ,self._blurKernelSize)
+            self._captureManager._frame = filters.autoThresh(frame,self._edgeKernelSize ,self._blurKernelSize)
 
             # self._captureManager._frame = filters.autoThreshMorph(frame,self._edgeKernelSize ,self._blurKernelSize)
 
-            ########################
+            ###### Filter testing #########
 
+            time.sleep(2)
 
             self._captureManager.exitFrame()
+
+
             self._windowManager.processEvents()
 
     def onKeypress(self, keycode):

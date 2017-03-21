@@ -21,6 +21,7 @@ class CaptureManager(object):
         self._startTime = None
         self._framesElapsed = 0
         self._fpsEstimate = None
+
     
     @property
     def channel(self):
@@ -55,7 +56,8 @@ class CaptureManager(object):
         
         if self._capture is not None:
             self._enteredFrame = self._capture.grab()
-    
+
+
     def exitFrame(self):
         """Draw to the window. Write to files. Release the frame."""
         
