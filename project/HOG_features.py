@@ -33,7 +33,7 @@ plt.show()
 # function for reading the images
 # arguments: path to the traffic sign data, for example './GTSRB/Training'
 # returns: list of images, list of corresponding labels
-def load_data(rootpath="datasets",cut_roi=True):
+def load_data(rootpath="datasets/GTSRB/Final_Training/Images",cut_roi=True):
     '''Reads traffic sign data for German Traffic Sign Recognition Benchmark.
 
     Arguments: path to the traffic sign data, for example './GTSRB/Training'
@@ -50,7 +50,7 @@ def load_data(rootpath="datasets",cut_roi=True):
         gtReader.next() # skip header
         # loop over all images in current annotations file
         for row in gtReader:
-            images.append(plt.imread(prefix + row[0])) # the 1th column is the filename
+            X.append(plt.imread(prefix + row[0])) # the 1th column is the filename
             labels.append(row[7]) # the 8th column is the label
         gtFile.close()
-    return images, labels
+    return X, labels
