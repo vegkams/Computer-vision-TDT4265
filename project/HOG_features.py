@@ -2,6 +2,8 @@
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 from scipy.misc import imread
+import cv2
+import csv
 from skimage.feature import hog
 from skimage import color, data, exposure
 
@@ -31,17 +33,19 @@ plt.show()
 # function for reading the images
 # arguments: path to the traffic sign data, for example './GTSRB/Training'
 # returns: list of images, list of corresponding labels
-def readTrafficSigns(rootpath):
+def load_data(rootpath="datasets",cut_roi=True):
     '''Reads traffic sign data for German Traffic Sign Recognition Benchmark.
 
     Arguments: path to the traffic sign data, for example './GTSRB/Training'
     Returns:   list of images, list of corresponding labels'''
-    images = [] # images
+    # class prohibitory signs (circular ,white background/red border)
+    classes = np.array([0, 1, 2, 3, 4, 5, 7, 8, 9, 10, 15, 16])
+    X = [] # images
     labels = [] # corresponding labels
-    # loop over all 42 classes
-    for c in range(0,43):
-        prefix = rootpath + '/' + format(c, '05d') + '/' # subdirectory for class
-        gtFile = open(prefix + 'GT-'+ format(c, '05d') + '.csv') # annotations file
+    # loop over all classes
+    for c in range(len(classes)):
+        prefix = rootpath + '/' + format(classes[c], '05d') + '/' # subdirectory for class
+        gtFile = open(prefix + 'GT-'+ format(classes[c], '05d') + '.csv') # annotations file
         gtReader = csv.reader(gtFile, delimiter=';') # csv parser for annotations file
         gtReader.next() # skip header
         # loop over all images in current annotations file
