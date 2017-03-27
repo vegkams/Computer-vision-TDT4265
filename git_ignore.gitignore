@@ -9,6 +9,9 @@ __pycache__/
 *.so
 
 # Distribution / packaging
+TrafficSignDetection/.idea
+TrafficSignDetection/__pycache__
+TrafficSignDetection/result
 .Python
 env/
 build/
