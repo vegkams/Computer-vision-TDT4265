@@ -6,6 +6,7 @@
 import cv2
 import numpy as np
 import os
+import shutil
 
 from abc import ABCMeta, abstractmethod
 from matplotlib import pyplot as plt
@@ -214,6 +215,10 @@ class MultiClassSVM(Classifier):
         self.mode = mode
         self.params = params or dict()
 
+        self.writeToFile = True
+        self.writeImagesToFolder = True
+        self.drawRectangles = True
+
         self.signMapping = ["speed limit 20 (prohibitory)",
                             "speed limit 30 (prohibitory)",
                             "speed limit 50 (prohibitory)",
@@ -257,10 +262,6 @@ class MultiClassSVM(Classifier):
                             "roundabout (mandatory)",
                             "restriction ends (overtaking) (other)",
                             "restriction ends (overtaking (trucks)) (other)"]
-
-        self.writeToFile = True
-        self.writeImagesToFolder = True
-        self.drawRectangles = True
 
         # initialize correct number of classifiers
         self.classifiers = []
@@ -368,6 +369,17 @@ class MultiClassSVM(Classifier):
 
         font = cv2.FONT_HERSHEY_SIMPLEX
         results = ""
+
+
+        folderPath = 'result/'
+
+        if self.writeImagesToFolder:
+            if not os.path.exists(folderPath):
+                os.makedirs(folderPath)
+            else:
+                shutil.rmtree(folderPath)
+                os.makedirs(folderPath)
+
         for key in picDict:
             if len(picDict[key]) > 0:
                 im = cv2.imread(rootpath + "/" + key)
@@ -397,10 +409,6 @@ class MultiClassSVM(Classifier):
 
                 # Write images to folder
                 if self.writeImagesToFolder:
-                    folderPath = 'result/'
-                    if not os.path.exists(folderPath):
-                        os.makedirs(folderPath)
-
                     cv2.imwrite(folderPath + key, im)
 
         # Write out the results of the classification to text file
