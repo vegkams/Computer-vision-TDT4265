@@ -5,9 +5,9 @@
 
 - [x] Train signs 
 - [x] Classify signs
-- [] Get ROI from circualr signs
-- [] Get ROI from rectangular signs
-- [] Get ROI from stop sign
+- [ ] Get ROI from circualr signs
+- [ ] Get ROI from rectangular signs
+- [ ] Get ROI from stop sign
 
 ### What is this repository for? ###
 
