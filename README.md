@@ -1,8 +1,17 @@
 # README #
 
+
+### TODO ###
+
+- [x] Train signs 
+- [x] Classify signs
+- [] Get ROI from circualr signs
+- [] Get ROI from rectangular signs
+- [] Get ROI from stop sign
+
 ### What is this repository for? ###
 
-* Quick summary
+* This is a project for the course TDT4265 - Computer Vision. 
 * Version
 * [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
 
