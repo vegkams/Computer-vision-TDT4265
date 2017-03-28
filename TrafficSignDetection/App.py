@@ -5,7 +5,7 @@
 import imutils
 import numpy as np
 import matplotlib.pyplot as plt
-import ROI_canny_hough
+
 
 import gtsrb
 from classifiers import MultiClassSVM
