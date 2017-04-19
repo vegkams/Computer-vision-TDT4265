@@ -5,6 +5,8 @@
 import imutils
 import numpy as np
 import matplotlib.pyplot as plt
+import cv2
+import csv
 
 
 import gtsrb
@@ -13,9 +15,62 @@ from classifiers import MultiClassSVM
 plotComparisson = False
 
 def main():
-    #strategies = ['one-vs-one', 'one-vs-all']
+
+    MCS = train_mcs()
+    rootpath = "datasets/TrainIJCNN2013"
+    prefix = rootpath + "/"
+    # annotations file
+    gt_file = open(rootpath + "/gt.txt")
+
+    # csv parser for annotations file
+    gt_reader = csv.reader(gt_file, delimiter=';')
+    row = gt_reader.__next__()
+    im = cv2.imread(prefix + row[0])
+    label = np.array(np.int(row[5]))
+    winl = 32
+    winh = 32
+
+    for resized in pyramid(im, scale = 1.5):
+        for (x, y, window) in sliding_window(im, stepSize=8,windowSize=(winl,winh)):
+            if window.shape[0] != winh or window.shape[1] != winl:
+                continue
+            x = gtsrb._extract_feature(window, 'hog')
+            x =  np.squeeze(np.array(x)).astype(np.float32)
+            acc, prec, rec = MCS.evaluate(x, label)
+            print("-accuracy: ", acc)
+# Implement non-maxima suppression or something 
+
+    ''''testData = gtsrb.load_test_data()
+    X_test = np.squeeze(np.array(testData[0])).astype(np.float32)
+    y_test = np.array(testData[1])
+    MCS.evaluateData(X_test, y_test, testData[2], testData[3], testData[4], testData[5])'''
+
+
+    # plot results as stacked bar plot
+    if plotComparisson:
+        f, ax = plt.subplots(2)
+        for s in range(len(strategies)):
+            x = np.arange(len(features))
+            ax[s].bar(x - 0.2, accuracy[s, :], width=0.2, color='b',
+                      hatch='/', align='center')
+            ax[s].bar(x, precision[s, :], width=0.2, color='r', hatch='\\',
+                      align='center')
+            ax[s].bar(x + 0.2, recall[s, :], width=0.2, color='g', hatch='x',
+                      align='center')
+            ax[s].axis([-0.5, len(features) + 0.5, 0, 1.5])
+            ax[s].legend(('Accuracy', 'Precision', 'Recall'), loc=2, ncol=3,
+                         mode='expand')
+            ax[s].set_xticks(np.arange(len(features)))
+            ax[s].set_xticklabels(features)
+            ax[s].set_title(strategies[s])
+
+        plt.show()
+
+
+def train_mcs():
+    # strategies = ['one-vs-one', 'one-vs-all']
     strategies = ['one-vs-one']
-    #features = [None, 'gray', 'rgb', 'hsv', 'hog']
+    # features = [None, 'gray', 'rgb', 'hsv', 'hog']
     features = ['hog']
     accuracy = np.zeros((2, len(features)))
     precision = np.zeros((2, len(features)))
@@ -23,8 +78,7 @@ def main():
 
     for f in range(len(features)):
         print("feature", features[f])
-        (X_train, y_train), (X_test, y_test) = gtsrb.load_data(feature=features[f],test_split=0.2,seed=42)
-
+        (X_train, y_train), (X_test, y_test) = gtsrb.load_data(feature=features[f], test_split=0.2, seed=42)
         # convert to numpy
         X_train = np.squeeze(np.array(X_train)).astype(np.float32)
         y_train = np.array(y_train)
@@ -53,34 +107,7 @@ def main():
             print("       - mean precision: ", np.mean(prec))
             print("       - mean recall: ", np.mean(rec))
 
-
-            testData = gtsrb.load_test_data()
-            X_test = np.squeeze(np.array(testData[0])).astype(np.float32)
-            y_test = np.array(testData[1])
-            MCS.evaluateData(X_test, y_test, testData[2], testData[3], testData[4], testData[5])
-
-
-
-    # plot results as stacked bar plot
-    if plotComparisson:
-        f, ax = plt.subplots(2)
-        for s in range(len(strategies)):
-            x = np.arange(len(features))
-            ax[s].bar(x - 0.2, accuracy[s, :], width=0.2, color='b',
-                      hatch='/', align='center')
-            ax[s].bar(x, precision[s, :], width=0.2, color='r', hatch='\\',
-                      align='center')
-            ax[s].bar(x + 0.2, recall[s, :], width=0.2, color='g', hatch='x',
-                      align='center')
-            ax[s].axis([-0.5, len(features) + 0.5, 0, 1.5])
-            ax[s].legend(('Accuracy', 'Precision', 'Recall'), loc=2, ncol=3,
-                         mode='expand')
-            ax[s].set_xticks(np.arange(len(features)))
-            ax[s].set_xticklabels(features)
-            ax[s].set_title(strategies[s])
-
-        plt.show()
-
+    return MCS
 # Create a pyramid of images of decreasing size (iterable method)
 def pyramid(image, scale = 1.5, minSize=(30, 30)):
     yield image
