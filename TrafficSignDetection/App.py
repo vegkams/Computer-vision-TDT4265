@@ -17,33 +17,36 @@ plotComparisson = False
 def main():
 
     MCS = train_mcs()
-    rootpath = "datasets/TrainIJCNN2013"
-    prefix = rootpath + "/"
-    # annotations file
-    gt_file = open(rootpath + "/gt.txt")
 
-    # csv parser for annotations file
-    gt_reader = csv.reader(gt_file, delimiter=';')
-    row = gt_reader.__next__()
-    im = cv2.imread(prefix + row[0])
-    label = np.array(np.int(row[5]))
-    winl = 32
-    winh = 32
-
-    for resized in pyramid(im, scale = 1.5):
-        for (x, y, window) in sliding_window(im, stepSize=8,windowSize=(winl,winh)):
-            if window.shape[0] != winh or window.shape[1] != winl:
-                continue
-            x = gtsrb._extract_feature(window, 'hog')
-            x =  np.squeeze(np.array(x)).astype(np.float32)
-            acc, prec, rec = MCS.evaluate(x, label)
-            print("-accuracy: ", acc)
+#    rootpath = "datasets/TrainIJCNN2013"
+#    prefix = rootpath + "/"
+#    # annotations file
+#    gt_file = open(rootpath + "/gt.txt")
+#
+#    # csv parser for annotations file
+#    gt_reader = csv.reader(gt_file, delimiter=';')
+#    row = gt_reader.__next__()
+#    im = cv2.imread(prefix + row[0])
+#    label = np.array(np.int(row[5]))
+#    winl = 32
+#    winh = 32
+#
+#    for resized in pyramid(im, scale = 1.5):
+#        for (x, y, window) in sliding_window(im, stepSize=8,windowSize=(winl,winh)):
+#            if window.shape[0] != winh or window.shape[1] != winl:
+#                continue
+#            x = gtsrb._extract_feature(window, 'hog')
+#            x =  np.squeeze(np.array(x)).astype(np.float32)
+#            acc, prec, rec = MCS.evaluate(x, label)
+#            print("-accuracy: ", acc)
 # Implement non-maxima suppression or something 
 
-    ''''testData = gtsrb.load_test_data()
+
+
+    testData = gtsrb.load_test_data()
     X_test = np.squeeze(np.array(testData[0])).astype(np.float32)
     y_test = np.array(testData[1])
-    MCS.evaluateData(X_test, y_test, testData[2], testData[3], testData[4], testData[5])'''
+    MCS.evaluateData(X_test, y_test, testData[2], testData[3], testData[4], testData[5])
 
 
     # plot results as stacked bar plot

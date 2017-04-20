@@ -106,8 +106,8 @@ def load_data(rootpath="datasets/GTSRB/Final_Training/Images", feature=None, cut
     """
     # hardcode available class labels
     #classes = np.array([1, 2])
-    #classes = np.array([0, 2, 4, 8, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42])
-    classes = np.array(range(0,43))
+    classes = np.array([0, 2, 4, 8, 6, 8, 10, 12, 14, 16, 18, 20, 22])
+    #classes = np.array(range(0,43))
 
     # read all training samples and corresponding class labels
     X = []  # data
