@@ -46,7 +46,9 @@ def main():
     testData = gtsrb.load_test_data()
     X_test = np.squeeze(np.array(testData[0])).astype(np.float32)
     y_test = np.array(testData[1])
-    MCS.evaluateData(X_test, y_test, testData[2], testData[3], testData[4], testData[5])
+    MCS.evaluateData(X_test, y_test,X_order=testData[2],picDict=testData[3],signBorders=testData[4],signCounterList=testData[5])
+
+    MCS.evaluateLive(X_test[5], 0)
 
 
     # plot results as stacked bar plot
