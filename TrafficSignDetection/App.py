@@ -14,6 +14,9 @@ from classifiers import MultiClassSVM
 
 plotComparisson = False
 
+cam = cv2.VideoCapture(0)
+
+
 def main():
 
     MCS = train_mcs()
@@ -46,9 +49,13 @@ def main():
     testData = gtsrb.load_test_data()
     X_test = np.squeeze(np.array(testData[0])).astype(np.float32)
     y_test = np.array(testData[1])
-    MCS.evaluateData(X_test, y_test,X_order=testData[2],picDict=testData[3],signBorders=testData[4],signCounterList=testData[5])
+    #MCS.evaluateData(X_test, y_test,X_order=testData[2],picDict=testData[3],signBorders=testData[4],signCounterList=testData[5])
+    X_live = [X_test[1],X_test[2],X_test[3]]
+    X_live_borders = [[983,388,1024,432],[386, 494, 442, 552],[973, 335, 1031, 390]]
 
-    MCS.evaluateLive(X_test[5], 0)
+    MCS.evaluateLive(X_live, X_live_borders)
+
+    #show_webcam(True)
 
 
     # plot results as stacked bar plot
@@ -132,6 +139,16 @@ def sliding_window(image, stepSize, windowSize):
         for x in range(0, image.shape[1], stepSize):
             yield(x, y, image[y:y + windowSize[1], x:x + windowSize[0]])
 
+def show_webcam(mirror=False):
+    cam = cv2.VideoCapture(0)
+    while True:
+	    ret_val, img = cam.read()
+	    if mirror:
+		    img = cv2.flip(img, 1)
+	    cv2.imshow('my webcam', img)
+	    if cv2.waitKey(1) == 27:
+		    break  # esc to quit
+    cv2.destroyAllWindows()
 
 
 
