@@ -261,7 +261,8 @@ class MultiClassSVM(Classifier):
                             "keep left (mandatory)",
                             "roundabout (mandatory)",
                             "restriction ends (overtaking) (other)",
-                            "restriction ends (overtaking (trucks)) (other)"]
+                            "restriction ends (overtaking (trucks)) (other)",
+                            "Other"]
 
         # initialize correct number of classifiers
         self.classifiers = []

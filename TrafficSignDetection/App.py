@@ -7,6 +7,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import cv2
 import csv
+import os
 
 
 import gtsrb
@@ -18,7 +19,7 @@ cam = cv2.VideoCapture(0)
 
 
 def main():
-
+    #createNegativeTrainingSet()
     MCS = train_mcs()
 
 #    rootpath = "datasets/TrainIJCNN2013"
@@ -50,6 +51,7 @@ def main():
     X_test = np.squeeze(np.array(testData[0])).astype(np.float32)
     y_test = np.array(testData[1])
     #MCS.evaluateData(X_test, y_test,X_order=testData[2],picDict=testData[3],signBorders=testData[4],signCounterList=testData[5])
+
     X_live = [X_test[1],X_test[2],X_test[3]]
     X_live_borders = [[983,388,1024,432],[386, 494, 442, 552],[973, 335, 1031, 390]]
 
@@ -150,7 +152,34 @@ def show_webcam(mirror=False):
 		    break  # esc to quit
     cv2.destroyAllWindows()
 
+def createNegativeTrainingSet(folderpath = "datasets/TrainIJCNN2013"):
+    setpath = "datasets/GTSRB/Final_Training/Images/00043/"
+    ofile = open(setpath + 'GT-00043.csv', "w")
+    header = "Filename;Width;Height;Roi.X1;Roi.Y1;Roi.X2;Roi.Y2;ClassId\n"
+    ofile.write(header)
+    counter1 = 0
+    counter2 = 0
+    Width = 30
+    Height = 30
+    x = 300
+    y = 300
 
+    for filename in os.listdir(folderpath):
 
+        img = cv2.imread(os.path.join(folderpath, filename))
+        if img is not None:
+            ofile.write('{0:05d}_{1:05d}.ppm;{2};{3};1;1;{4};{5};43\n'.format(counter2,counter1,Width,Height,Width-1,Height-1))
+
+            crop_img = img[y:y + Height, x: x+Width]
+            cv2.imwrite(setpath + '/{0:05d}_{1:05d}.ppm'.format(counter2,counter1),crop_img)
+            counter1 += 1
+            Width += 1
+            Height += 1
+            if(counter1 == 30):
+                Width = 30
+                Height = 30
+                counter1 = 0
+                counter2 += 1
+    ofile.close()
 if __name__ == '__main__':
     main()
