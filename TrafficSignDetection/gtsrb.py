@@ -22,7 +22,7 @@ def load_test_data(rootpath= "datasets/TrainIJCNN2013",feature='hog'):
     X = []  # data
     labels = []  # corresponding labels
     keyOrder = []    # remeber the order of keys to look up
-    picDict = {} # kor storing classification text
+    picDict = {} # storing classification text
     bordersDict = {} # borders of signs
 
     signCounterList = []
@@ -106,8 +106,8 @@ def load_data(rootpath="datasets/GTSRB/Final_Training/Images", feature=None, cut
     """
     # hardcode available class labels
     #classes = np.array([1, 2])
-    classes = np.array([0, 2, 4, 8, 6, 8, 10, 12, 14, 16, 18, 20, 22])
-    #classes = np.array(range(0,43))
+    #classes = np.array([0, 2, 4, 8, 6, 8, 10, 12, 14, 16, 18, 20, 22])
+    classes = np.array(range(0,43))
 
     # read all training samples and corresponding class labels
     X = []  # data

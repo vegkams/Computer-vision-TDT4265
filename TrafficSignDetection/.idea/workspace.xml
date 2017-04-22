@@ -14,92 +14,134 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="App.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/App.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-675">
-              <caret line="11" column="12" lean-forward="true" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="classifiers.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/classifiers.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-275">
-              <caret line="321" column="93" lean-forward="true" selection-start-line="321" selection-start-column="93" selection-end-line="321" selection-end-column="93" />
-              <folding>
-                <element signature="e#97#107#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="skeleton.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../../../NTNU/Vaar 2017/Metoder i kunstig intelligens/Innleveringer/5/skeleton.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1785">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ROIdetector.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ROIdetector.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="10" lean-forward="false" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/datasets_old/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gtsrb.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gtsrb.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="885">
-              <caret line="108" column="68" lean-forward="false" selection-start-line="108" selection-start-column="68" selection-end-line="108" selection-end-column="68" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ROI_canny_hough.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ROI_canny_hough.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="result.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/result.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.8842105">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="App.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/App.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="268">
+                  <caret line="148" column="32" lean-forward="true" selection-start-line="148" selection-start-column="32" selection-end-line="148" selection-end-column="32" />
+                  <folding>
+                    <element signature="e#48#62#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="codecs.py" pinned="false" current-in-tab="false">
+            <entry file="file://$USER_HOME$/miniconda3/envs/opencv/lib/python3.5/codecs.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="179">
+                  <caret line="308" column="0" lean-forward="false" selection-start-line="308" selection-start-column="0" selection-end-line="308" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="classifiers.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/classifiers.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-170">
+                  <caret line="546" column="41" lean-forward="false" selection-start-line="546" selection-start-column="41" selection-end-line="546" selection-end-column="41" />
+                  <folding>
+                    <element signature="e#97#107#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="fromnumeric.py" pinned="false" current-in-tab="false">
+            <entry file="file://$USER_HOME$/miniconda3/envs/opencv/lib/python3.5/site-packages/numpy/core/fromnumeric.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="173">
+                  <caret line="962" column="0" lean-forward="false" selection-start-line="962" selection-start-column="0" selection-end-line="962" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="sklearnClassifiers.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/sklearnClassifiers.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="60">
+                  <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#0#28#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="skeleton.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/../../../../NTNU/Vaar 2017/Metoder i kunstig intelligens/Innleveringer/5/skeleton.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ROIdetector.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/ROIdetector.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="105">
+                  <caret line="7" column="10" lean-forward="false" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/datasets_old/__init__.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="gtsrb.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/gtsrb.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-135">
+                  <caret line="56" column="20" lean-forward="false" selection-start-line="56" selection-start-column="20" selection-end-line="56" selection-end-column="20" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="result.txt" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/result.txt">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="classifiers.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/classifiers.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="238">
+                  <caret line="438" column="24" lean-forward="false" selection-start-line="438" selection-start-column="24" selection-end-line="438" selection-end-column="24" />
+                  <folding>
+                    <element signature="e#97#107#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -110,7 +152,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>next</find>
       <find>xra</find>
       <find>MCS</find>
       <find>params</find>
@@ -130,8 +171,17 @@
       <find>visulize</find>
       <find>rootpath</find>
       <find>svm</find>
-      <find>evaluate</find>
       <find>imutils</find>
+      <find>test</find>
+      <find>classi</find>
+      <find>MultiClassSVM</find>
+      <find>num_classes</find>
+      <find>labels</find>
+      <find>classifiers</find>
+      <find>classes</find>
+      <find>predict</find>
+      <find>X</find>
+      <find>evaluate</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -141,17 +191,34 @@
         <option value="$PROJECT_DIR$/App2.py" />
         <option value="$PROJECT_DIR$/datasets/gtsrb.py" />
         <option value="$PROJECT_DIR$/ROIdetector.py" />
-        <option value="$PROJECT_DIR$/classifiers.py" />
+        <option value="$PROJECT_DIR$/sklearnClassifiers.py" />
         <option value="$PROJECT_DIR$/gtsrb.py" />
+        <option value="$PROJECT_DIR$/classifiers.py" />
         <option value="$PROJECT_DIR$/App.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="714" />
+    <option name="x" value="366" />
     <option name="y" value="22" />
-    <option name="width" value="718" />
+    <option name="width" value="1066" />
     <option name="height" value="878" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Buildout</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -188,6 +255,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager" selected="Python.App">
     <configuration default="false" name="classifiers" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -411,16 +479,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="714" y="22" width="718" height="878" extended-state="0" />
-    <editor active="false" />
+    <frame x="366" y="22" width="1066" height="878" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18528996" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32951653" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30407125" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964131" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30407125" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24893919" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32951653" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27989823" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -457,13 +525,9 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/App.py</url>
-          <line>74</line>
-          <option name="timeStamp" value="92" />
-        </line-breakpoint>
-      </breakpoints>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -471,12 +535,11 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="93" />
+      <option name="time" value="150" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/datasets/gtsrb.py" />
     <entry file="file://$PROJECT_DIR$/datasets/__init__.py" />
     <entry file="file://$PROJECT_DIR$/classifiers.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -492,7 +555,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#48#62#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -516,7 +581,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="24" column="4" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
-          <folding />
+          <folding>
+            <element signature="e#48#62#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -570,7 +637,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="683">
           <caret line="65" column="34" lean-forward="true" selection-start-line="65" selection-start-column="34" selection-end-line="65" selection-end-column="34" />
-          <folding />
+          <folding>
+            <element signature="e#48#62#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -588,7 +657,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#48#62#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -607,7 +678,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="855">
           <caret line="61" column="42" lean-forward="false" selection-start-line="61" selection-start-column="42" selection-end-line="61" selection-end-column="42" />
-          <folding />
+          <folding>
+            <element signature="e#48#62#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -627,7 +700,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="855">
           <caret line="61" column="42" lean-forward="true" selection-start-line="61" selection-start-column="42" selection-end-line="61" selection-end-column="42" />
-          <folding />
+          <folding>
+            <element signature="e#48#62#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -657,7 +732,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#48#62#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -670,18 +747,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/datasets/gtsrb.py" />
     <entry file="file://$PROJECT_DIR$/ParsingDataset.py" />
-    <entry file="file://$USER_HOME$/miniconda3/envs/opencv/lib/python3.5/codecs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="319" column="0" lean-forward="false" selection-start-line="319" selection-start-column="0" selection-end-line="319" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/App.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="24" column="4" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
-          <folding />
+          <folding>
+            <element signature="e#48#62#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -708,10 +780,21 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/datasets/gtsrb.py" />
-    <entry file="file://$USER_HOME$/miniconda3/envs/opencv/lib/python3.5/site-packages/numpy/core/fromnumeric.py">
+    <entry file="file://$PROJECT_DIR$/ROI_canny_hough.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10800">
-          <caret line="962" column="0" lean-forward="false" selection-start-line="962" selection-start-column="0" selection-end-line="962" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#10#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/result.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -725,8 +808,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gtsrb.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="885">
-          <caret line="108" column="68" lean-forward="false" selection-start-line="108" selection-start-column="68" selection-end-line="108" selection-end-column="68" />
+        <state relative-caret-position="-135">
+          <caret line="56" column="20" lean-forward="false" selection-start-line="56" selection-start-column="20" selection-end-line="56" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sklearnClassifiers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../NTNU/Vaar 2017/Metoder i kunstig intelligens/Innleveringer/5/skeleton.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -739,49 +840,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ROI_canny_hough.py">
+    <entry file="file://$USER_HOME$/miniconda3/envs/opencv/lib/python3.5/site-packages/numpy/core/fromnumeric.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/result.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="173">
+          <caret line="962" column="0" lean-forward="false" selection-start-line="962" selection-start-column="0" selection-end-line="962" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App.py">
+    <entry file="file://$USER_HOME$/miniconda3/envs/opencv/lib/python3.5/codecs.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-675">
-          <caret line="11" column="12" lean-forward="true" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../NTNU/Vaar 2017/Metoder i kunstig intelligens/Innleveringer/5/skeleton.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1785">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="179">
+          <caret line="308" column="0" lean-forward="false" selection-start-line="308" selection-start-column="0" selection-end-line="308" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classifiers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-275">
-          <caret line="321" column="93" lean-forward="true" selection-start-line="321" selection-start-column="93" selection-end-line="321" selection-end-column="93" />
+        <state relative-caret-position="-170">
+          <caret line="546" column="41" lean-forward="false" selection-start-line="546" selection-start-column="41" selection-end-line="546" selection-end-column="41" />
           <folding>
             <element signature="e#97#107#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/App.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="148" column="32" lean-forward="true" selection-start-line="148" selection-start-column="32" selection-end-line="148" selection-end-column="32" />
+          <folding>
+            <element signature="e#48#62#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

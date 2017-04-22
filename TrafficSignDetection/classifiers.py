@@ -346,6 +346,7 @@ class MultiClassSVM(Classifier):
                     else:
                         print("y_hat[", i, "] = ", y_hat[i])
 
+
                 # we vote for c1 where y_hat is 1, and for c2 where y_hat
                 # is 0 np.where serves as the inner index into the data_id
                 # array, which in turn serves as index into the results
@@ -417,9 +418,96 @@ class MultiClassSVM(Classifier):
             file.write(results)
             file.close()
 
+    def evaluateLive(self, X_test, signBorders, rootpath = "datasets/TrainIJCNN2013"):
+        """
+        :param path:  Path to pictures to be evaluated
+        :return:
+        """
+        y_hat_all = np.array(np.zeros(len(X_test)))
+        picText = [None]*len(X_test)
+
+        for j in range(len(X_test)):
+            svm_id = 0
+            Y_vote = np.zeros(self.num_classes)
+            for c1 in range(self.num_classes):
+                for c2 in range(c1 + 1, self.num_classes):
+
+                    #data_id = np.where((y_test == c1) + (y_test == c2))[0]
+                    #X_test_id = X_test[data_id, :]
+
+                    # set class label to 1 where class==c1, else 0
+                    # y_test_bin = np.where(y_test_id==c1,1,0).reshape(-1,1)
+
+                    # predict labels
+                    #y_hat = self.classifiers[svm_id].predict(np.array([X_test]))
+
+                    y_hat = self.classifiers[svm_id].predict(np.array([X_test[j]]))
+
+                    for i in range(len(y_hat[1])):
+                        if y_hat[1][i] == 1:
+                            Y_vote[c1] += 1
+                        elif y_hat[1][i] == 0:
+                            Y_vote[c2] += 1
+                        else:
+                            print("y_hat[", i, "] = ", y_hat[i])
+
+                    # we vote for c1 where y_hat is 1, and for c2 where y_hat
+                    # is 0 np.where serves as the inner index into the data_id
+                    # array, which in turn serves as index into the results
+                    # array
+                    # Y_vote[data_id[np.where(y_hat == 1)[0]], c1] += 1
+                    # Y_vote[data_id[np.where(y_hat == 0)[0]], c2] += 1
+                    svm_id += 1
+            y_hat = np.argmax(Y_vote)
+            y_hat_all[j] = y_hat
+            picNumber = j + 1
+            picText[j] = str.format('%d. %s'% (picNumber, self.signMapping[y_hat]))
+        print(y_hat_all)
+
+       # find text to the match
+        font = cv2.FONT_HERSHEY_SIMPLEX
+        results = ""
+
+        folderPath = 'result/'
+
+        if self.writeImagesToFolder:
+            if not os.path.exists(folderPath):
+                os.makedirs(folderPath)
+            else:
+                shutil.rmtree(folderPath)
+                os.makedirs(folderPath)
+
+            pic = "00001.ppm"
+            im = cv2.imread(rootpath + "/" + pic)
+
+            # write classification text to picture
+            counter = 0
+            for text in picText:
 
 
+      #             results += key + ': ' + text + '\n'
+                counter += 1
+                cv2.putText(im, text, (10, 50*counter), font, 1, (0, 0, 255), 2, cv2.LINE_AA)
 
+            # draw borders around signs
+            counter = 1
+            if self.drawRectangles:
+                for border in signBorders:
+                    cv2.rectangle(im, (border[0],border[1]), (border[2],border[3]), (0,255,0),2)
+                    #cv2.putText(im, str.format('%d' % signCounterList[border[4]]),(border[0]-15,border[1]), font, 0.5, (0, 255, 0), 1, cv2.LINE_AA)
+                    cv2.putText(im, str.format('%d' % counter), (border[0] - 15, border[1]), font, 0.6, (0, 255, 0), 2, cv2.LINE_AA)
+                    counter += 1
+
+
+      #         # Write images to folder
+                if self.writeImagesToFolder:
+                    cv2.imwrite(folderPath + pic, im)
+
+       # Write out the results of the classification to text file
+        if self.writeToFile:
+            file = open('result.txt', 'w+')
+            file.write(results)
+            file.close()
 
 
 
