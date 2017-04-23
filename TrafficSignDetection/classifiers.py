@@ -262,7 +262,7 @@ class MultiClassSVM(Classifier):
                             "roundabout (mandatory)",
                             "restriction ends (overtaking) (other)",
                             "restriction ends (overtaking (trucks)) (other)",
-                            "Other"]
+                            "False"]
 
         # initialize correct number of classifiers
         self.classifiers = []
@@ -419,7 +419,7 @@ class MultiClassSVM(Classifier):
             file.write(results)
             file.close()
 
-    def evaluateLive(self, X_test, signBorders, rootpath = "datasets/TrainIJCNN2013"):
+    def evaluateLive(self, X_test, signBorders, im):
         """
         :param path:  Path to pictures to be evaluated
         :return:
@@ -461,13 +461,26 @@ class MultiClassSVM(Classifier):
                     svm_id += 1
             y_hat = np.argmax(Y_vote)
             y_hat_all[j] = y_hat
-            picNumber = j + 1
-            picText[j] = str.format('%d. %s'% (picNumber, self.signMapping[y_hat]))
-        print(y_hat_all)
+            #picNumber = j + 1
+            #picText[j] = str.format('%d. %s'% (picNumber, self.signMapping[y_hat]))
 
+        counter = 0
+        position = 0
+        deletePositions = []
+        for y in y_hat_all:
+            if y != 43:
+                picText[counter] = str.format('%d. %s'% (counter +1, self.signMapping[int(y)]))
+                counter += 1
+            else:
+                deletePositions.append(position)
+            position += 1
+
+        signBorders = np.delete(signBorders, deletePositions, 0)
        # find text to the match
         font = cv2.FONT_HERSHEY_SIMPLEX
         results = ""
+
+
 
         folderPath = 'result/'
 
@@ -478,15 +491,11 @@ class MultiClassSVM(Classifier):
                 shutil.rmtree(folderPath)
                 os.makedirs(folderPath)
 
-            pic = "00001.ppm"
-            im = cv2.imread(rootpath + "/" + pic)
-
             # write classification text to picture
             counter = 0
             for text in picText:
 
 
-      #             results += key + ': ' + text + '\n'
                 counter += 1
                 cv2.putText(im, text, (10, 50*counter), font, 1, (0, 0, 255), 2, cv2.LINE_AA)
 
@@ -500,11 +509,11 @@ class MultiClassSVM(Classifier):
                     counter += 1
 
 
-      #         # Write images to folder
+               # Write images to folder
                 if self.writeImagesToFolder:
-                    cv2.imwrite(folderPath + pic, im)
-
-       # Write out the results of the classification to text file
+                    cv2.imwrite(folderPath +  "result.ppm", im)
+                #cv2.imshow("Tesla", im)
+         # Write out the results of the classification to text file
         if self.writeToFile:
             file = open('result.txt', 'w+')
             file.write(results)

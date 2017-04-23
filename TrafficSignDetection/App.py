@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import cv2
 import csv
 import os
-
+import roi_extract
 
 import gtsrb
 from classifiers import MultiClassSVM
@@ -21,6 +21,9 @@ cam = cv2.VideoCapture(0)
 def main():
     #createNegativeTrainingSet()
     MCS = train_mcs()
+    img = cv2.imread("datasets/TrainIJCNN2013/00121.ppm")
+
+
 
 #    rootpath = "datasets/TrainIJCNN2013"
 #    prefix = rootpath + "/"
@@ -45,18 +48,24 @@ def main():
 #            print("-accuracy: ", acc)
 # Implement non-maxima suppression or something 
 
-
+    while True:
+        img = webcamGrab()
+        roi, X = roi_extract.ROI(img)
+        MCS.evaluateLive(X, roi, img)
+        if cv2.waitKey(1) == 27:
+            break  # esc to quit
 
     testData = gtsrb.load_test_data()
     X_test = np.squeeze(np.array(testData[0])).astype(np.float32)
     y_test = np.array(testData[1])
     #MCS.evaluateData(X_test, y_test,X_order=testData[2],picDict=testData[3],signBorders=testData[4],signCounterList=testData[5])
 
-    X_live = [X_test[1],X_test[2],X_test[3]]
-    X_live_borders = [[983,388,1024,432],[386, 494, 442, 552],[973, 335, 1031, 390]]
+    #X_live = [X_test[1],X_test[2],X_test[3]]
+    #X_live_borders = [[983,388,1024,432],[386, 494, 442, 552],[973, 335, 1031, 390]]
 
-    MCS.evaluateLive(X_live, X_live_borders)
-
+    #MCS.evaluateLive(X_live, X_live_borders)
+    roi, X = roi_extract.ROI(img)
+    MCS.evaluateLive(X, roi, img)
     #show_webcam(True)
 
 
@@ -151,6 +160,14 @@ def show_webcam(mirror=False):
 	    if cv2.waitKey(1) == 27:
 		    break  # esc to quit
     cv2.destroyAllWindows()
+
+def webcamGrab(mirror=False):
+    ret_val, img = cam.read()
+    if mirror:
+	    img = cv2.flip(img, 1)
+
+    return img
+
 
 def createNegativeTrainingSet(folderpath = "datasets/TrainIJCNN2013"):
     setpath = "datasets/GTSRB/Final_Training/Images/00043/"
