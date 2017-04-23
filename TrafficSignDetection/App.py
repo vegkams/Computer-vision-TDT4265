@@ -55,8 +55,20 @@ def main():
     X_live = [X_test[1],X_test[2],X_test[3]]
     X_live_borders = [[983,388,1024,432],[386, 494, 442, 552],[973, 335, 1031, 390]]
 
-    MCS.evaluateLive(X_live, X_live_borders)
-
+    #MCS.evaluateLive(X_live, X_live_borders)
+    img_test = cv2.imread('datasets/TestIJCNN2013/00107.ppm')
+    (winW, winH) = (32, 32)
+    for resized in pyramid(img_test, scale=1.5):
+        for (x, y, window) in sliding_window(resized, stepSize=16, windowSize=(winW, winH)):
+            if window.shape[0] != winH or window.shape[1] != winW:
+                continue
+            hogResized = gtsrb._extract_feature(resized, 'hog')
+            MCS.evaluateLive_sliding(hogResized, [[0, 0, 32, 32]], resized)
+            print('evaluated')
+            # clone = resized.copy()
+            # cv2.rectangle(clone, (x, y), (x + winW, y + winH), (0, 255, 0), 2)
+            # cv2.imshow("Window", clone)
+            # cv2.waitKey(1)
     #show_webcam(True)
 
 
